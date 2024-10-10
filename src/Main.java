@@ -2,17 +2,7 @@ package src;
 
 public class Main {
 
-    public static void swapArrayElem(Int[] arr, int elem1, int elem2){
-        int temp = arr[elem1].toInt();
-        arr[elem1].setInt(arr[elem2].toInt());
-        arr[elem2].setInt(temp);
-    }
 
-    public static void swapObjValue(Int obj1, Int obj2){
-        int temp = obj1.toInt();
-        obj1.setInt(obj2.toInt());
-        obj2.setInt(temp);
-    }
 
     public static int stringToInt(String s) {
         if (s == null || s.isEmpty()) {
@@ -49,9 +39,9 @@ public class Main {
 //                    arr[j] = arr[j + 1];
 //                    arr[j + 1] = temp;
 
-//                    swapArrayElem(arr, j, j+1);
+//                    Int.swapArrayElem(arr, j, j+1);
 
-//                    swapObjValue(arr[j], arr[j+1]);
+//                    Int.swapObjValue(arr[j], arr[j+1]);
 
                     arr[j].swapCurrObjValue(arr[j+1]);
 
