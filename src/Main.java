@@ -2,6 +2,17 @@ package src;
 
 public class Main {
 
+    public static void swapArrayElem(Int[] arr, int elem1, int elem2){
+        int temp = arr[elem1].toInt();
+        arr[elem1].setInt(arr[elem2].toInt());
+        arr[elem2].setInt(temp);
+    }
+
+    public static void swapObjValue(Int obj1, Int obj2){
+        int temp = obj1.toInt();
+        obj1.setInt(obj2.toInt());
+        obj2.setInt(temp);
+    }
 
     public static int stringToInt(String s) {
         if (s == null || s.isEmpty()) {
@@ -24,18 +35,26 @@ public class Main {
 
     }
 
-    public static void bubbleSort(int[] arr, int n){
+    public static void bubbleSort(Int[] arr, int n){
         int i, j, temp;
         boolean swapped;
         for (i = 0; i < n - 1; i++) {
             swapped = false;
             for (j = 0; j < n - i - 1; j++) {
-                if (arr[j] > arr[j + 1]) {
+                if (arr[j].toInt() > arr[j + 1].toInt()) {
 
-                    // Swap arr[j] and arr[j+1]
-                    temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
+                    // Swap arr[j] and arr[j+1] using different methods
+
+//                    temp = arr[j];
+//                    arr[j] = arr[j + 1];
+//                    arr[j + 1] = temp;
+
+//                    swapArrayElem(arr, j, j+1);
+
+//                    swapObjValue(arr[j], arr[j+1]);
+
+                    arr[j].swapCurrObjValue(arr[j+1]);
+
                     swapped = true;
                 }
             }
@@ -46,14 +65,13 @@ public class Main {
 
 
     public static void main(String[] args) {
-        //Getting args
         int nbArgs = args.length;
-        int[] values;
-        values = new int[nbArgs];
+        Int[] values;
+        values = new Int[nbArgs];
 
         for(int i = 0; i < nbArgs; ++i){
-            values[i] = stringToInt(args[i]);
-            System.out.println(values[i]);
+            values[i] = new Int(stringToInt(args[i]));
+            System.out.println(values[i].toString());
         }
 
         System.out.println();
@@ -62,6 +80,7 @@ public class Main {
         for(int i = 0; i < nbArgs; ++i){
             System.out.println(values[i]);
         }
+
 
     }
 }
