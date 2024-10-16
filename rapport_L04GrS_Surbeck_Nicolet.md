@@ -28,7 +28,7 @@ La classe `Int` encapsule un entier privé et expose les méthodes suivantes :
 La classe `Main` gère l'exécution du programme principal :
 
 - `stringToInt(String s)` : Convertit une chaîne en entier tout en validant la saisie.
-- `bubbleSort(Int[] arr, int n)` : Implémente un tri à bulles sur un tableau d'objets `Int`, en utilisant la méthode `swapCurrObjValue` pour échanger les éléments.
+- `bubbleSort(Int[] arr, int n)` : Implémente un tri à bulles sur un tableau d'objets `Int`, en utilisant la méthode `swapCurrObjValue` pour échanger les éléments. (les autres méthodes en commentaire fonctionnent elles aussi.)
 
 Le programme prend en entrée des arguments en ligne de commande, les convertit en entiers, les trie, et affiche les résultats avant et après le tri.
 
@@ -48,7 +48,7 @@ Entrée : `"-123", "456", "abc"`
 - Résultat attendu : `-123`, `456`, et une exception pour `"abc"`.
 - Résultat obtenu :
   - Conversion réussie pour `"-123"` et `"456"`.
-  - Exception levée pour `"abc"` : `IllegalArgumentException: Caractère non numérique trouvé`.
+  - Exception levée pour `"abc"` : `Exception in thread "main" java.lang.IllegalArgumentException: Caractère non numérique trouvé : a at src.Main.stringToInt(Main.java:51)at src.Main.main(Main.java:103)`. Donc le programme se termine.
 
 #### Cas de test 2 : Tri à bulles
 
